@@ -12,14 +12,23 @@ void day01::part01() {
     std::string line;
     int sum = 0;
 
+    // loop through every line in the input file
     while (std::getline(inputFile, line)) {
-        int first = line[line.find_first_of("123456789")] - '0';
-        int last = line[line.find_last_of("123456789")] - '0';
-        int calibrationValue = (first * 10) + last;
-        sum += calibrationValue;
+
+        // empty list to hold all the numbers that appear in the string
+        std::vector<int> list;
+
+        // linear search thru the line to find all numbers, when found push to the list
+        for (char c : line)
+            if (isnumber(c)) list.push_back(c - '0');
+
+        // add the calibration value of the line to the sum of all calibration values
+        sum += (list.front() * 10) + list.back();
     }
 
+    // housekeeping
     inputFile.close();
+
     std::cout << "Day 01 Part 01: " << sum << std::endl;
 }
 
