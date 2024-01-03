@@ -6,10 +6,8 @@
 #define ADVENTOFCODE_DAY01_H
 
 namespace day01 {
-    constexpr char INPUT[] = "../inputs/day01.txt";
-
-    void part01();
-    void part02();
+    void part01(std::string INPUT);
+    void part02(std::string INPUT);
 }
 
 #endif //ADVENTOFCODE_DAY01_H

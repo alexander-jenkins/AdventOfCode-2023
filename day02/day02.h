@@ -6,10 +6,8 @@
 #define ADVENTOFCODE_DAY02_H
 
 namespace day02 {
-    constexpr char INPUT[] = "../inputs/day02.txt";
-
-    void part01();
-    void part02();
+    void part01(const std::string& INPUT);
+    void part02(std::string INPUT);
 
     struct Result
     {

@@ -7,7 +7,7 @@
 #include <vector>
 #include "day01.h"
 
-void day01::part01() {
+void day01::part01(std::string INPUT) {
     std::ifstream inputFile(INPUT);
     std::string line;
     int sum = 0;
@@ -20,7 +20,7 @@ void day01::part01() {
 
         // linear search thru the line to find all numbers, when found push to the list
         for (char c: line)
-            if (isnumber(c)) list.push_back(c - '0');
+            if (isdigit(c)) list.push_back(c - '0');
 
         // add the calibration value of the line to the sum of all calibration values
         sum += (list.front() * 10) + list.back();
@@ -32,7 +32,7 @@ void day01::part01() {
     std::cout << "Day 01 Part 01: " << sum << std::endl;
 }
 
-void day01::part02() {
+void day01::part02(std::string INPUT) {
     std::ifstream inputFile(INPUT);
     std::string line;
     int sum = 0;
@@ -50,7 +50,7 @@ void day01::part02() {
             int numLeft = line.length() - i;
 
             // if the character is a number, add to the list and go to the next iteration of the loop
-            if (isnumber(c)) {
+            if (isdigit(c)) {
                 list.push_back(c - '0');
                 continue;
             }
