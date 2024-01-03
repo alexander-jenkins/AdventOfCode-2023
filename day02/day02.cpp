@@ -4,21 +4,33 @@
 
 #include <iostream>
 #include <fstream>
+#include <regex>
 #include "day02.h"
 
 void day02::part01()
 {
-    std::ifstream gameFile(INPUT);
-    std::vector<Game> games;
+    constexpr int MAX_RED = 12;
+    constexpr int MAX_GREEN = 13;
+    constexpr int MAX_BLUE = 14;
 
+    std::ifstream gameFile("../inputs/day02_part01.txt");
     std::string line;
-    while (std::getline(gameFile, line))
-    {
-        int sep = line.find(':');
 
-        int id = std::stoi(line.substr(4, sep));
-        games.push_back({id, {}});
+    std::regex gameIdRegex("/(\\d+)(?=:)/g");
+
+    int sum = 0;
+
+    // read each line
+    while(getline(gameFile, line)) {
+
+        // get the id of the game
+        std::regex_iterator matches(line.begin(), line.end(), gameIdRegex);
+        std::cout << 1 << matches.str() << "\n";
+
+        std::cout << line << "\n";
     }
+    gameFile.close();
 
-    std::cout << "Day 02 Part 01: " << games.size() << std::endl;
+
+    std::cout << "Day 02 Part 01: " << 0 << std::endl;
 }
