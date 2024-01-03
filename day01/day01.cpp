@@ -7,7 +7,7 @@
 #include <vector>
 #include "day01.h"
 
-void day01::part01(std::string INPUT) {
+void day01::part01(const std::string& INPUT) {
     std::ifstream inputFile(INPUT);
     std::string line;
     int sum = 0;
@@ -18,7 +18,7 @@ void day01::part01(std::string INPUT) {
         // empty list to hold all the numbers that appear in the string
         std::vector<int> list;
 
-        // linear search thru the line to find all numbers, when found push to the list
+        // linear search through the line to find all numbers, when found push to the list
         for (char c: line)
             if (isdigit(c)) list.push_back(c - '0');
 
@@ -32,7 +32,7 @@ void day01::part01(std::string INPUT) {
     std::cout << "Day 01 Part 01: " << sum << std::endl;
 }
 
-void day01::part02(std::string INPUT) {
+void day01::part02(const std::string& INPUT) {
     std::ifstream inputFile(INPUT);
     std::string line;
     int sum = 0;
@@ -43,11 +43,11 @@ void day01::part02(std::string INPUT) {
         // empty list to hold all the numbers that appear in the string
         std::vector<int> list;
 
-        // linear search thru the line to find all numbers, when found push to the list
+        // linear search through the line to find all numbers, when found push to the list
         for (int i = 0; i < line.length(); i++) {
             // get the current character
             char c = line.at(i);
-            int numLeft = line.length() - i;
+            auto numLeft = line.length() - i;
 
             // if the character is a number, add to the list and go to the next iteration of the loop
             if (isdigit(c)) {

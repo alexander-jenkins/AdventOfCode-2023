@@ -7,26 +7,7 @@
 
 namespace day02 {
     void part01(const std::string& INPUT);
-    void part02(std::string INPUT);
-
-    struct Result
-    {
-        int red;
-        int green;
-        int blue;
-    };
-
-    struct GameID
-    {
-        int id;
-    };
-
-    struct Game
-    {
-        GameID id;
-        Result rolls;
-    };
-
+    void part02(const std::string& INPUT);
 }
 
 #endif //ADVENTOFCODE_DAY02_H
