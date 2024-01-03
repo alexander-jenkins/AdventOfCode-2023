@@ -7,7 +7,7 @@
 #include <vector>
 #include "day01.h"
 
-void day01::part01(const std::string& INPUT) {
+void day01::part01(const std::string &INPUT) {
     std::ifstream inputFile(INPUT);
     std::string line;
     int sum = 0;
@@ -32,7 +32,7 @@ void day01::part01(const std::string& INPUT) {
     std::cout << "Day 01 Part 01: " << sum << std::endl;
 }
 
-void day01::part02(const std::string& INPUT) {
+void day01::part02(const std::string &INPUT) {
     std::ifstream inputFile(INPUT);
     std::string line;
     int sum = 0;

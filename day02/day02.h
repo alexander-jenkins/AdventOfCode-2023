@@ -6,8 +6,9 @@
 #define ADVENTOFCODE_DAY02_H
 
 namespace day02 {
-    void part01(const std::string& INPUT);
-    void part02(const std::string& INPUT);
+    void part01(const std::string &INPUT);
+
+    void part02(const std::string &INPUT);
 }
 
 #endif //ADVENTOFCODE_DAY02_H
